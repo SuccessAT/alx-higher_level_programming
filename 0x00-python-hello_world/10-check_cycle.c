@@ -1,10 +1,12 @@
 nclude "lists.h"
 
 /**
- * check_cycle - checks if a singly linked list for cycles
+ * check_cycle - checks if a singly linked list has
+ * a cycle in it
  * @list: list pointer
- * Return: 0 if there is no cycle or 1 if there is a cycle
+ * Return: 0 if there is no cycle, 1 if there is a cycle
  */
+
 int check_cycle(listint_t *list)
 {
 	listint_t *pointer;
