@@ -7,28 +7,28 @@ nclude "lists.h"
  */
 int check_cycle(listint_t *list)
 {
-	listint_t *p2;
-	listint_t *prev;
+	listint_t *pointer;
+	listint_t *previous;
 
-	p2 = list;
-	prev = list;
-	while (list && p2 && p2->next)
+	pointer = list;
+	previous = list;
+	while (list && pointer && pointer->next)
 	{
 		list = list->next;
-		p2 = p2->next->next;
+		pointer = pointer->next->next;
 
-		if (list == p2)
+		if (list == pointer)
 		{
-			list = prev;
-			prev =  p2;
+			list = previous;
+			previous =  pointer;
 			while (1)
 			{
-				p2 = prev;
-				while (p2->next != list && p2->next != prev)
+				pointer = previous;
+				while (pointer->next != list && pointer->next != previous)
 				{
-					p2 = p2->next;
+					pointer = pointer->next;
 				}
-				if (p2->next == list)
+				if (pointer->next == list)
 					break;
 
 				list = list->next;
